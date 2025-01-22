@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Urbanist", Georgia, sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family:'Poppins', Georgia, sans-serif;
+}
+
+p, li, a{
+    font-family: "Urbanist", Georgia, sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    font-weight:400;
+    color: var(--para-color);
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+
+/*  theme  */
+
+:root{
+    --main-color: #0062ff;
+    --supporting-color: #EBF3FE;
+    --font-color: #424242;
+    --bg-color: #ffffff;
+    --heading-color: #000a19;
+    --h-color: #0a043c;
+    --white-color: #ffffff;
+    --para-color: #504e4d;
+    --btn-hover-bg-color: #003b99;
+    --btn-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/*  layout  */
+
+.container{ 
+    max-width: 142rem;
+    margin: 0 auto;
+    padding: 9.6rem 2.4rem;
+}
+
+.grid{
+    display: grid;
+}
+
+.grid-two--cols{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three--cols{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four--cols{
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* ---- Reusable ---- */
+
+.custom-shape-divider {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+
+    & svg {
+       position: relative;
+       display: block;
+       width: calc(100% + 1.3px);
+    }
+
+    & .shape-fill {
+       fill: var(--white-color);
+    }
+}
+
+.section-common--heading{
+    font-size: 3.2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-family: "Poppins", Georgia, sans-serif;
+}
+
+.section-common--subheading{
+    color: var(--heading-color);
+}
+
+.section-common--title{
+    font-size: 2rem;
+    margin: 2.4rem 0 1.2rem 0 ;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1.2rem 3.2rem;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border-radius: 0.6rem;
+
+    &:hover{
+        background-color: var(--btn-hover-bg-color);
+        cursor: pointer;
+        box-shadow: var(--btn-box-shadow);
+    }
+}
+
+.fa-solid, 
+.fa-brands{
+    padding: 2.4rem;
+    background-color: #daedf6;
+    font-size: 2.4rem;
+    border-radius: 50%;
+    color: #3fbfff;
+}
+
+/* =====| -- Navbar Start -- |===== */
+
+.section-navabr{
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+    & .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.8rem 0;
+        /* background: #f7fcff; */
+
+        & .navbar ul{
+            display: flex;
+            gap: 3.2rem;
+            
+            & li a{
+                color: var(--heading-color);
+                text-transform: uppercase;
+                font-weight: 700;
+                display: inline-block;
+                position: relative;
+                
+                &:hover{
+                    color: var(--main-color);
+                    border-bottom: 0.2rem solid var(--main-color);
+                    animation: slide 0.3s linear;
+                }
+            }
+        }
+    }
+
+}
+
+@keyframes slide {
+    0%{
+        opacity: 0.1;
+        width: 0%;
+    }
+    100%{
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+/* =====| -- Navbar End -- |===== */
+
+
+
+/* =====| -- Hero Start -- |===== */
+
+main{
+    position: relative;
+    background-image: linear-gradient(
+        to top right,
+        #3d86fa,
+        #4484fb,
+        #679eff,
+        #b3d2ff,
+        #ebf3fe
+    );
+}
+
+.section-hero .grid{
+    align-items: center;
+    gap: 6.4rem;
+
+    & .hero-subheading{
+        letter-spacing: 0.2rem;
+        font-size: 1.7rem;
+        word-spacing: 0.2rem;
+        color: var(--btn-hover-bg-color);
+        font-weight: 700;
+    }
+
+    & .hero-heading{
+        font-size: 5.8rem;
+        line-height: 1.5;
+        font-family: "Jost", Georgia, sans-serif;
+        color: var(--h-color);
+        font-weight: 900;
+    }
+
+    & .hero-para{
+        color: var(--white-color);
+        margin: 2rem 0 4rem 0;
+    }
+}
+
+.section-hero--image img{
+    width: 100%;
+    height: auto;
+    transform: scaleX(-1);
+}
+
+/* ---- Shape Divider ---- */
+
+.custom-shape-divider-bottom-1737528906 {
+    bottom: -1px;
+    transform: rotate(180deg);
+
+    & svg {
+        height: 10rem;
+    }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-bottom-1737528906 svg {
+        width: calc(171% + 1.3px);
+        height: 116px;
+    }
+}
+
+/* =====| -- Hero End -- |===== */
+
+
+
+/* =====| -- About Start -- |===== */
+
+.section-about {
+
+    & .grid{
+        gap: 6.4rem;
+    }
+
+    & .about-div{
+        text-align: center;
+    }
+
+    & img{
+        padding: 2.4rem;
+        background-color: var(--supporting-color);
+        width: 15rem;
+        height: auto;
+        border-radius: 50%;
+        transition: all 0.3s linear;
+
+        &:hover {
+            rotate: 360deg;
+            background: linear-gradient(to right, #0575E6, #021B79);
+        }
+    }
+}
+
+
+/* =====| -- About End -- |===== */
+
+
+
+/* =====| -- Course Start -- |===== */
+
+.section-course{
+    position: relative;
+    background-color: var(--supporting-color);
+
+    & .grid{
+        gap: 3.2rem;
+    }
+
+    & .course-div{
+        padding: 3.2rem;
+
+        &:hover{
+            border-radius: 2rem;
+            box-shadow: var(--btn-box-shadow);
+        }
+
+        &:nth-child(2) .icon .fa-brands {
+            color: #68bf9b;
+            background-color: #e7f6ef;
+          }
+          
+          &:nth-child(3) .icon .fa-solid {
+            color: #ff8b52;
+            background-color: #fbebe8;
+          }
+          
+          &:nth-child(4) .icon .fa-brands {
+            color: #183d3d;
+            background-color: #ccf7f7;
+          }
+          
+          &:nth-child(5) .icon .fa-solid {
+            color: #d988b9;
+            background-color: rgb(247, 223, 238);
+          }
+          
+          &:nth-child(6) .icon .fa-solid {
+            color: #ff9b50;
+            background-color: #f6dfce;
+          }
+          
+          &:nth-child(7) .icon .fa-brands {
+            color: #1450a3;
+            background-color: #dce9fa;
+          }
+    }
+    
+}
+
+
+
+/* ---- Shape Divider ---- */
+
+.custom-shape-divider-top-1737530896 {
+    top: -1px;
+
+    & svg {
+        height: 20rem;
+    }
+}
+
+
+/* =====| -- Course End -- |===== */
