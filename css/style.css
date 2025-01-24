@@ -140,16 +140,35 @@ li{
 
 .section-navabr{
     width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-
+    
     & .container{
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1.8rem 0;
-        /* background: #f7fcff; */
 
-        & .navbar ul{
+        & .navbar-brand{
+            margin-top: 2rem;
+            transition: all ease-in-out 1s;
+
+            & img:hover{
+                scale: 1.1;
+            }
+        }
+        
+
+        & .navbar{
+            background-image: linear-gradient(
+                to right,
+                rgb(216, 231, 254),
+                #e2eeff
+            );
+            border-radius: 2.4rem;
+            border-top: 1px solid rgba( 255, 255, 255, 0.18 );
+            border-left: 1px solid rgba( 255, 255, 255, 0.18 );
+            padding: 1rem 4.5rem;
+        } 
+        & ul{
             display: flex;
             gap: 3.2rem;
             
@@ -195,7 +214,7 @@ main{
         #3d86fa,
         #4484fb,
         #679eff,
-        #b3d2ff,
+        rgb(179, 210, 255),
         #ebf3fe
     );
 }
@@ -301,7 +320,7 @@ main{
         padding: 3.2rem;
 
         &:hover{
-            border-radius: 2rem;
+            border-radius: 1rem;
             box-shadow: var(--btn-box-shadow);
         }
 
@@ -339,7 +358,6 @@ main{
 }
 
 
-
 /* ---- Shape Divider ---- */
 
 .custom-shape-divider-top-1737530896 {
@@ -350,5 +368,95 @@ main{
     }
 }
 
+.custom-shape-divider-bottom-1737742908 {
+    bottom: 0;
+    transform: rotate(180deg);
+
+    & svg {
+        height: 20rem;
+    }
+}
+
 
 /* =====| -- Course End -- |===== */
+
+
+/* =====| -- Why Choose Start -- |===== */
+
+.section-why--choose{
+
+    & .grid{
+        gap: 9.6rem;
+    }
+
+    & .why-choose--div{
+        margin-top: 3.2rem;
+    }
+
+    & .text-align--right .why-choose--div{
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        text-align: right;
+    }
+
+    & .common-text--highlight{
+        width: 6rem;
+        aspect-ratio: 1;
+        background-color: var(--supporting-color);
+        color: var(--main-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.4rem;
+        font-weight: 700;
+        border-radius: 50%;
+    }
+}
+
+.choose-center--div img{
+    width: 90%;
+    height: auto;
+} 
+
+.choose-center--div, figure{
+    margin-top: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.choose-center--div figure::before, .choose-center--div figure::after{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--main-color);
+    width: 110%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    z-index: -1;
+
+}
+
+.choose-center--div figure::after{
+    z-index: -2;
+    background-color: transparent;
+    animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+    0%{
+        width: 107%;
+        border: 0.4rem solid var(--main-color);
+    }
+    100%{
+        width: 115%;
+        border: 0.4rem solid var(--bg-color);
+    }
+}
+
+
+/* =====| -- Why Choose End -- |===== */
